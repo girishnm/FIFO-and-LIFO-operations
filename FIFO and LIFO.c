@@ -28,13 +28,12 @@ int dequeueR(dequeue *p);
 
 void print(dequeue *p);
 void avg(dequeue *p, dequeue *q,int n);
-
 void main()
 
 {
 
 
-int i,x,d[10],op,n,del;
+int i,x,d[10],n,op,del;
 
 dequeue q,qtt;
 
@@ -127,9 +126,11 @@ exit(0);
 }
 printf("Please enter how many elements you want to delete\n");
 scanf("%d",&del);
-for (i=0;i<del;i++)
+for (i=0;i<del;i++){
     d[i]=dequeueR(&q);
-
+    d[i]=dequeueR(&qtt);
+    n--;
+}
 // printf("\nElement deleted are\n");
 // for (i=0;i<del;i++)
 //     printf("%d," d[i]);
@@ -147,8 +148,12 @@ exit(0);
 printf("Please enter how many elements you want to delete\n");
 scanf("%d",&del);
 for (i=0;i<del;i++)
-d[i]=dequeueF(&q);
+{
+    d[i]=dequeueF(&q);
+d[i]=dequeueF(&qtt);
+n--;
 
+}
 //printf("\nElement deleted is %d\n",x);
 
 break;
@@ -245,6 +250,7 @@ initialize(P);
 else
 
 P->front=(P->front+1)%MAX;
+
 
 return(x);
 
