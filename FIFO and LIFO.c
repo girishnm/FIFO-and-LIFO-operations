@@ -63,32 +63,7 @@ initialize(&q);
 initialize(&qtt);
 
 
-printf("\nEnter the elements separated by comma\n");
-
-for(i=0;i<n;i++)
-
-{
-
-scanf("%d,",&x);
-
-if(full(&q))
-
-{
-
-printf("\nQueue is full!!");
-
-exit(0);
-
-}
-
-enqueueR(&q,x);
-
-}
-
-
-
-
-printf("\nEnter the corresponding number of tokens separated by comma\n");
+printf("\nEnter the number of tokens separated by comma\n");
 
 for(i=0;i<n;i++)
 
@@ -107,6 +82,31 @@ exit(0);
 }
 
 enqueueR(&qtt,x);
+
+}
+
+
+
+
+printf("\nEnter the corresponding price separated by comma\n");
+
+for(i=0;i<n;i++)
+
+{
+
+scanf("%d,",&x);
+
+if(full(&q))
+
+{
+
+printf("\nQueue is full!!");
+
+exit(0);
+
+}
+
+enqueueR(&q,x);
 
 }
 
@@ -303,7 +303,7 @@ printf(" %d ",P->data[P->rear]);
 
 void avg(dequeue *P,dequeue *Q, int n)
 {
-int a=0;
+float a=0;
 if(empty(P))
 
 {
@@ -328,6 +328,6 @@ i=(i+1)%MAX;
 
 }
 a=a+(P->data[P->rear]*Q->data[Q->rear]);
-printf(" %d ",a/n);
+printf(" %f ",a/n);
 a=0;
 }
